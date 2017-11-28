@@ -1,4 +1,5 @@
 window.onload = function () {
+    var allTime = new Date().getTime();
     var ImgList = document.querySelectorAll('img'),mask = document.querySelector('.mask'),num = 0;
     for(var i = 0;i < ImgList.length;i ++)
     {
