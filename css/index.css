@@ -326,6 +326,7 @@ img {
     font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue",Arial,Helvetica,sans-serif;
 }
 .item-display{
+    overflow: hidden;
     position: relative;
     margin-bottom: 3em;
 }
@@ -436,4 +437,73 @@ img {
     top:150px;
     font-family: "Lucida Console",'微软雅黑';
     z-index: 10;
+}
+.add{
+    height: 366px;
+    border: 3px dashed #d3cbc4;
+    text-align: center;
+    padding: 6em;
+}
+/*addmessage*/
+.addMsg{
+    border: none;
+    width: 100px;
+    height:100px;
+    background: url("../img/add.png") no-repeat center;
+    cursor: pointer;
+}
+.modal-body textarea{
+    resize: none;
+}
+form p{
+    float:left;
+    clear:both;
+    margin:5px 0;
+    background-color:#f4f4f4;
+    border:1px solid #fff;
+    width:470px;
+    padding:4px;
+    /*margin-left:100px;*/
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow:0px 0px 3px #aaa;
+    -webkit-box-shadow:0px 0px 3px #aaa;
+    box-shadow:0px 0px 3px #aaa;
+}
+form p label{
+    width:130px;
+    float:left;
+    text-align:right;
+    margin-right:15px;
+    line-height:26px;
+    color:#666;
+    text-shadow:1px 1px 1px #fff;
+    font-weight:bold;
+}
+form input:not([type=radio]),
+form textarea,
+form select{
+    background: #ffffff;
+    border: 1px solid #ddd;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    width: 250px;
+    float:left;
+}
+
+/*ajax删除*/
+.delete{
+    border: none;
+    width: 30px;
+    height:32px;
+    background: url("../img/delete.png") no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    right:30px;
+    top:0;
 }
