@@ -1,6 +1,6 @@
 $.ajax({
     type: 'GET',
-    url: 'http://192.168.1.139:8080/back',
+    url: 'http://192.168.43.245:8080/back',
     dataType: 'json',
     data: {
     },
@@ -23,7 +23,7 @@ $.ajax({
             if(key%2 === 0)
             {
                 var itemDisplay = $('<div class="col-12 item-display">' +
-                    '<img class="col-12" src="../static/img/dis.png" alt="background">' +
+                    '<img class="col-12" src="img/dis.png" alt="background">' +
                     '<img class="addImg item-imgs-odd col-6" src="http://p0f7xvqqj.bkt.clouddn.com/' + arr1[key].url +
                     '" alt="item">' + '<div class="item-introduce item-introduce-odd col-6">' +
                     '<h3>'+ arr1[key].itemName +'</h3>' +
@@ -36,7 +36,7 @@ $.ajax({
             }
             else {
                 var itemDisplay = $('<div class="col-12 item-display">' +
-                    '<img class="col-12 rotate" src="../static/img/dis.png" alt="background">' +
+                    '<img class="col-12 rotate" src="img/dis.png" alt="background">' +
                     '<img class="addImg item-imgs-even col-6" src="http://p0f7xvqqj.bkt.clouddn.com/' + arr1[key].url +
                     '" alt="item">' + '<div class="item-introduce item-introduce-even col-6">' +
                     '<h3>'+ arr1[key].itemName +'</h3>' +
