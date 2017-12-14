@@ -160,19 +160,19 @@ $('#submit').on('click',function () {
     var flag = true;
     for(var i = 0;i < textarea.length; i ++)
     {
-        if(textarea[i].value == '')
+        if(textarea[i].value === '')
         {
             flag = false;
         }
     }
     for(var j = 0;j < file.length;j ++)
     {
-        if(file[j].value == '')
+        if(file[j].value === '')
         {
             flag = false;
         }
     }
-    if(flag == false)
+    if(flag === false)
     {
         alert('请将信息填写完整！')
         return false;
