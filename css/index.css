@@ -338,7 +338,7 @@ img {
     left: 0;
 }
 .item-introduce-odd{
-    /*padding: 0 1em;*/
+    padding: 0 2em;
     /*width: 38%;*/
     position: absolute;
     right:0;
@@ -370,7 +370,7 @@ img {
     right: 0;
 }
 .item-introduce-even{
-    /*padding: 0 1em;*/
+    padding: 0 2em;
     /*width: 38%;*/
     position: absolute;
     left: 0;
