@@ -347,13 +347,13 @@ img {
 }
 .item-introduce h3{
     font-size: 1rem;
+    margin-bottom: 0;
 }
 .item-introduce span,.item-introduce p{
     font-size: 1rem;
     color: #6e6e6e;
 }
 .item-introduce p{
-    /*margin-top: 5px;*/
     margin-bottom:0;
     text-indent: 2rem;
 }
