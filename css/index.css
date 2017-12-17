@@ -328,17 +328,17 @@ img {
 .item-display{
     overflow: hidden;
     position: relative;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
 }
 .item-imgs-odd{
     /*width: 40%;*/
-    padding: 2.5em 4em;
+    padding: 2.5rem 4rem;
     position: absolute;
     top: 0;
     left: 0;
 }
 .item-introduce-odd{
-    padding: 0 2em;
+    padding: 0 2rem;
     /*width: 38%;*/
     position: absolute;
     right:0;
@@ -346,16 +346,16 @@ img {
     /*margin-bottom: 3em;*/
 }
 .item-introduce h3{
-    font-size: 1em;
+    font-size: 1rem;
 }
 .item-introduce span,.item-introduce p{
-    font-size: 16px;
+    font-size: 1rem;
     color: #6e6e6e;
 }
 .item-introduce p{
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     margin-bottom:0;
-    text-indent: 2em;
+    text-indent: 2rem;
 }
 .item-display .rotate{
     -webkit-transform: rotate(180deg);
@@ -364,13 +364,13 @@ img {
 }
 .item-imgs-even{
     /*width: 40%;*/
-    padding: 2.5em 4em;
+    padding: 2.5rem 4rem;
     position: absolute;
     top: 0;
     right: 0;
 }
 .item-introduce-even{
-    padding: 0 2em;
+    padding: 0 2rem;
     /*width: 38%;*/
     position: absolute;
     left: 0;
