@@ -1,11 +1,10 @@
 $.ajax({
-    type: 'GET',
-    url: 'http://192.168.43.245:8080/back',
-    dataType: 'json',
+    type:'GET',
+    url:'http://localhost:7070/post',
+    dataType:'json',
     data: {
     },
     success: function (data) {
-        // var arr = JSON.parse(data);
         var arr1 = [];
         var arr2 = [];
         for(var i in data)
@@ -18,14 +17,13 @@ $.ajax({
                 arr2.push(data[i]);
             }
         }
-        for(var key in arr1)
-        {
-            if(key%2 === 0)
+        if(arr1.length != 0){
+            for(var key in arr1)
             {
                 var itemDisplay = $('<div class="col-12 item-display">' +
-                    '<img class="col-12" src="img/dis.png" alt="background">' +
-                    '<img class="addImg item-imgs-odd col-6" src="http://p0f7xvqqj.bkt.clouddn.com/' + arr1[key].url +
-                    '" alt="item">' + '<div class="item-introduce item-introduce-odd col-6">' +
+                    '<img class="col-12 newAddImg" src="img/dis.png" alt="background">' +
+                    '<img class="addImg item-imgs-odd newDisplayImg col-6" src="http://p0f7xvqqj.bkt.clouddn.com/' + arr1[key].url +
+                    '" alt="item">' + '<div class="item-introduce newDisplayIntro item-introduce-odd col-6">' +
                     '<h3>'+ arr1[key].itemName +'</h3>' +
                     '<span>'+ arr1[key].leader +'</span>' +
                     '<p>' + arr1[key].introduce +'</p>' +
@@ -33,115 +31,53 @@ $.ajax({
                     '<button class="btn delete"></button>'+
                     '</div>');
                 $('.item-display:last').after(itemDisplay);
-            }
-            else {
-                var itemDisplay = $('<div class="col-12 item-display">' +
-                    '<img class="col-12 rotate" src="img/dis.png" alt="background">' +
-                    '<img class="addImg item-imgs-even col-6" src="http://p0f7xvqqj.bkt.clouddn.com/' + arr1[key].url +
-                    '" alt="item">' + '<div class="item-introduce item-introduce-even col-6">' +
-                    '<h3>'+ arr1[key].itemName +'</h3>' +
-                    '<span>'+ arr1[key].leader +'</span>' +
-                    '<p>' + arr1[key].introduce +'</p>' +
-                    '</div>' +
-                    '<button class="btn delete"></button>'+
-                    '</div>');
-                $('.item-display:last').after(itemDisplay);
-            }
-        }
-
-        if(arr2.length%2 === 0)
-        {
-            for(var j = 0;j < arr2.length;j ++)
-            {
-                if(j%2 === 0)
-                {
-                    var gloryWall = $('<div class="col-12 glory-wall clearfix">' +
-                        '<div class="col-6 pull-left glory-left">' +
-                        '<div><img class="addImg col-8 pull-left" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[j].url + '"/><div>' +
-                        '<h3>'+ arr2[j].gloryName + '<br>'+ arr2[j].ranking +'</h3>' +
-                        '<span>'+ arr2[j].gLeader +'</span>' +
-                        '<p>' + arr2[j].contestIntro+ '</p>' +
-                        '<p>' + arr2[j].result + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '<button class="btn delete"></button>'+
-                        '</div>' +
-                        '<div class="col-6 pull-right glory-right">' +
-                        '<div><img class="addImg col-8 pull-right" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[j+1].url + '"><div>' +
-                        '<h3>'+ arr2[j+1].gloryName +'<br>'+ arr2[j+1].ranking +'</h3>' +
-                        '<span>'+ arr2[j+1].gLeader +'</span>' +
-                        '<p>' + arr2[j+1].contestIntro + '</p>' +
-                        '<p>' + arr2[j+1].result + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '<button class="btn delete"></button>'+
-                        '</div>' +
-                        '</div>');
-                    $('.glory-wall:last').after(gloryWall);
-                    j++;
+                if(key%2 === 1){
+                    $('.newAddImg').eq(key).addClass('rotate');
+                    $('.newDisplayImg').eq(key).removeClass('item-imgs-odd').addClass('item-imgs-even');
+                    $('.newDisplayIntro').eq(key).removeClass('item-introduce-odd').addClass('item-introduce-even');
                 }
             }
         }
-        else {
-            var flag = arr2.length-1;
-            for(var j = 0;j < flag;j ++)
-            {
-                if(j%2 === 0)
-                {
-                    var gloryWall = $('<div class="col-12 glory-wall clearfix">' +
-                        '<div class="col-6 pull-left glory-left">' +
-                        '<div><img class="addImg col-8 pull-left" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[j].url + '"/><div>' +
-                        '<h3>'+ arr2[j].gloryName + '<br>'+ arr2[j].ranking +'</h3>' +
-                        '<span>'+ arr2[j].gLeader +'</span>' +
-                        '<p>' + arr2[j].contestIntro+ '</p>' +
-                        '<p>' + arr2[j].result + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '<button class="btn delete"></button>'+
-                        '</div>' +
-                        '<div class="col-6 pull-right glory-right">' +
-                        '<div><img class="addImg col-8 pull-right" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[j+1].url + '"><div>' +
-                        '<h3>'+ arr2[j+1].gloryName +'<br>'+ arr2[j+1].ranking +'</h3>' +
-                        '<span>'+ arr2[j+1].gLeader +'</span>' +
-                        '<p>' + arr2[j+1].contestIntro + '</p>' +
-                        '<p>' + arr2[j+1].result + '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '<button class="btn delete"></button>'+
-                        '</div>' +
-                        '</div>');
-                    $('.glory-wall:last').after(gloryWall);
-                    j++;
-                }
-            }
-            var gloryWall = $('<div class="col-12 glory-wall clearfix">' +
-                '<div class="col-6 pull-left glory-left">' +
-                '<div><img class="addImg col-8 pull-left" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[flag].url + '"/><div>' +
-                '<h3>'+ arr2[flag].gloryName + '<br>'+ arr2[flag].ranking +'</h3>' +
-                '<span>'+ arr2[flag].gLeader +'</span>' +
-                '<p>' + arr2[flag].contestIntro+ '</p>' +
-                '<p>' + arr2[flag].result + '</p>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '<button class="btn delete"></button>'+
-                '</div>');
-            $('.glory-wall:last').after(gloryWall);
+        if(arr2.length != 0){
+           for(var j = 0;j < arr2.length;j++)
+           {
+               alert(j);
+               if(j%2 === 0)
+               {
+                   var gloryWall = $('<div class="col-12 glory-wall newGloryWall clearfix"></div>');
+                   $('.glory-wall:last').after(gloryWall);
+               }
+               var left = $('<div class="col-6 pull-left glory-left newGlory">' +
+                           '<div><img class="addImg col-8 pull-left" alt="" src="http://p0f7xvqqj.bkt.clouddn.com/'+ arr2[j].url + '"/><div>' +
+                           '<h3>'+ arr2[j].gloryName + '<br>'+ arr2[j].ranking +'</h3>' +
+                           '<span>'+ arr2[j].gLeader +'</span>' +
+                           '<p>' + arr2[j].contestIntro+ '</p>' +
+                           '<p>' + arr2[j].result + '</p>' +
+                           '</div>' +
+                           '</div>' +
+                           '<button class="btn delete"></button>'+
+                           '</div>');
+               $('.newGloryWall').eq(parseInt(j/2)).append(left);
+               if(j%2 === 1){
+                   $('.newGlory:eq(j)').removeClass('pull-left glory-left').addClass('pull-right glory-right');
+                   $('.newGlory:eq(j) .col-8').removeClass('pull-left').addClass('pull-right');
+               }
+           }
         }
         $('.delete').on('click',function () {
             var imgUrl = $(this).parent().find('.addImg').attr('src').substring(33);
-            // console.log(imgUrl);
-            //     $.ajax({
-            //         type: 'POST',
-            //         url: 'http://192.168.43.245:8080/image?type=3',
-            //         dataType: 'json',
-            //         data: {
-            //
-            //         },
-            //         success: function () {
-            //             alert('删除成功！');
-            //         }
-            //     })
+            console.log(imgUrl);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://192.168.43.245:8080/image?type=3',
+                    dataType: 'json',
+                    data: {
+
+                    },
+                    success: function () {
+                        alert('删除成功！');
+                    }
+                })
             $.post('http://192.168.1.139:8080/image?type=3&&url='+imgUrl,{
                 url: imgUrl
             })
@@ -180,7 +116,6 @@ $('#submit').on('click',function () {
     else {
         alert('提交成功！');
     }
-
 })
 $('#submit1').on('click',function () {
     var textarea = $('#myModal2 textarea');
@@ -208,5 +143,4 @@ $('#submit1').on('click',function () {
     else {
         alert('提交成功！');
     }
-
 })
